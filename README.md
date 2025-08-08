@@ -1,39 +1,33 @@
-# ![RealWorld Example App](logo.png)
+### Introduction
 
-> ### Typescript + Express + Prisma codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
+- The following program is a backend server, that implements REST
+  endpoints for authentication, and other operations. 
 
-### [Demo](https://realworld.seuronao.duckdns.org)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://github.com/gothinkster/realworld)
+- It is capable of interacting with `postgresql` database using **Prisma
+  ORM**.
 
-This codebase was created to demonstrate a backend built with **Typescript + Express + Prisma** including CRUD operations, authentication, routing, pagination, and more.
+### Manual
 
-We've gone to great lengths to adhere to the **Typescript** community styleguides & best practices.
+1. Run `npm install` to install the dependencies.
 
-For more information on how to this works with other frontends/backends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repo.
-
-# How it works
-
-The project is build using [TypeScript](https://www.typescriptlang.org/) for language, [Express](https://expressjs.com/) for routing and server framework and [Prisma](https://www.prisma.io/) as an _ORM_.
-
-The project uses [PostgreSQL](https://www.postgresql.org/) for the database.
-
-For unit testing it uses the [Jest](https://jestjs.io/) framework since it is what is promoted by prisma team to mock testing function that change the database.
-
-# Getting started
-
-To run this project you should have _node/npm_ installed.
-
-Run `npm install` to install the dependencies.
-
-Create a development environment file `.env.development` inside the root folder with the following attributes:
+2. Create a development environment file `.env.development` inside the root
+folder with the following attributes:
 
 ```
-DATABASE_URL=file:./dev.db
-JWT_SECRET=theSecretForCreatingTheJWT
-NODE_ENV=development
+DATABASE_URL=postgresql://_user_:_password_@localhost:5432/_database_name_
+JWT_SECRET=_define_a_custom_secret_for_creating_JWT_tokens_
+NODE_ENV=development/production
 ```
+
+3. Setup `postgres` SQL server.
+
+4. Run the backend usign `npm run develop` to start the server in
+   development environment,
+
+Scripts provided:
 
 - To update the database in development mode use `npm run migrate:develop`
 - To run the development version `npm run develop`.
+- To run the production build `npm run start`.
 - To test the application `npm test`.
 - To build a production version `npm run build`.
-- To run the production build `npm run start`.
